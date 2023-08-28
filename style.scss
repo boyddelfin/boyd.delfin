@@ -1,0 +1,225 @@
+:root {
+    --hex-primary: #0F172A;
+    --hex-secondary: #EAB308;
+    --hex-white: #fff;
+    --hex-black: #333;
+    --rgb-primary: 15, 23, 42;
+    --rgb-secondary: 234, 179, 8;
+    --rgb-white: 255,255,255;
+    --rgb-black: 0,0,0;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-smooth: always;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    color: rgba(var(--rgb-white), 0.8);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 200;
+    line-height: 1.4em;
+    letter-spacing: 0.05em;
+    background-color: var(--hex-primary);
+    height: 100vh;
+    overflow: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: rgba(var(--rgb-white), 1);
+    line-height: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+.gradient-bg {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .gradient-1,
+    .gradient-2,
+    .gradient-3 {
+        display: block;
+        width: 50vw;
+        height: 50vh;
+        border-radius: 50%;
+        opacity: 0.7;
+    }
+    .gradient-1 {
+        background-image: linear-gradient(#EAB308, #b92594);
+        filter: blur(150px);
+        transform: translateY(120px);
+    }
+    .gradient-2 {
+        background-image: linear-gradient(225deg,#a23fff, #ff3954);
+        filter: blur(200px);
+    }
+    .gradient-3 {
+        background-image: linear-gradient(#0e1eff, #1fff0b);
+        filter: blur(150px);
+        transform: translateY(-120px);
+    }
+}
+
+#main-wrapper {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    max-height: 100vh;
+    z-index: 9;
+    margin: auto 0;
+    padding: 2.5%;
+
+    .profile {
+        background-color: rgba(var(--rgb-primary), 0.3);
+        width: auto;
+        margin: 0 auto;
+        box-shadow: 0 0 50px rgba(var(--rgb-black), 0.3);
+        border: 1px solid rgba(var(--rgb-white), 0.1);
+        overflow: hidden;
+        header {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid rgba(var(--rgb-white), 0.05);
+        
+            .social {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px;
+                margin-left: auto;
+                a {
+                    margin: 0 5px;
+                    img {
+                        display: block;
+                        transition: all 0.1s ease-in-out;
+                        &:hover {
+                            transform: scale(1.3);
+                        }
+                    }
+                }
+            }
+        
+            .account {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 10px;
+                pointer-events: none;
+        
+                img {
+                    display: block;
+                    width: 18px;
+                }
+
+                .profile-name {
+                    h1 {
+                        font-size: 12px;
+                        font-weight: 400;
+                        margin-bottom: 0;
+                        line-height: 1.4em;
+                    }
+                    p {
+                        font-weight: 200;
+                        font-size: 10px;
+                        line-height: 1.2em;
+                    }
+                }
+            }
+        }
+        
+        #content {
+            width: 100%;
+            height: calc(100% - 36px);
+            #sidebar {
+                width: 280px;
+                height: 100%;
+                border-right: 1px solid rgba(var(--rgb-white), 0.05);
+                
+                .sub-content {
+                    padding: 10px;
+                    border-bottom: 1px solid rgba(var(--rgb-white), 0.05);
+                    h2 {
+                        font-weight: 400 !important;
+                    }
+                    div,
+                    span {
+                        transition: all 0.3s ease-in-out;
+                        &:hover {
+                            color: rgba(var(--rgb-white), 1);
+                        }
+                    }
+                    &:last-child {
+                        border-bottom: 0;
+                    }
+                }
+
+                .about-me {
+                    text-align: center;
+                    img {
+                        border-radius: 50%;
+                        margin-top: 30px;
+                        margin-bottom: 10px;
+                    }
+                    h3 {
+                        font-weight: 400;
+                        margin-bottom: 0;
+                    }
+                }
+
+                .tech-stack {
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    gap: 10px;
+                    span {
+                        display: block;
+                    }
+                }
+
+                .dev-tools {
+                    position: relative;
+                    text-align: center;
+                    div {
+                        display: inline-block;
+                        &:after {
+                            content: '';
+                            display: inline-block;
+                            width: 3px;
+                            height: 3px;
+                            border-radius: 50%;
+                            background-color: rgba(var(--rgb-white), 0.5);
+                            margin-left: 5px;
+                            transform: translateY(-3px);
+                        }
+                        &:last-child::after {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+    .glass-blur {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+    }
+}
