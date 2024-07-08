@@ -101,7 +101,8 @@ a {
 }
 
 .version {
-    text-align: right;
+    display: flex;
+    justify-content: space-between;
 }
 
 #command-output {
