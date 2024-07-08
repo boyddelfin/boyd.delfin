@@ -156,6 +156,13 @@ a {
             } 
         }
     }
+    .cmd-submit-wrapper {
+        button {
+            background-color: transparent;
+            border: 0;
+            color: var(--hex-secondary);
+        }
+    }
 }
 
 

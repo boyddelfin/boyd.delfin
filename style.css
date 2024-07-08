@@ -164,6 +164,11 @@ a {
 #command-line .cmd-input-wrapper .cmd-input:focus {
   outline: none;
 }
+#command-line .cmd-submit-wrapper button {
+  background-color: transparent;
+  border: 0;
+  color: var(--hex-secondary);
+}
 
 @media screen and (max-width: 767px) {
   .gradient-bg .gradient-1 {
