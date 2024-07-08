@@ -161,6 +161,9 @@ a {
             background-color: transparent;
             border: 0;
             color: var(--hex-secondary);
+            &:focus {
+                color: var(--hex-white);
+            }
         }
     }
 }
