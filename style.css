@@ -104,6 +104,10 @@ a {
   padding: 20px;
 }
 
+.version {
+  text-align: right;
+}
+
 #command-output {
   height: 100%;
   padding: 20px;
